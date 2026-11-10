@@ -1,0 +1,16 @@
+{
+  "name": "jojosorry",
+  "version": "1.0.0",
+  "description": "A special message for JOJO with Vercel Web Analytics",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build needed for static HTML'",
+    "lint": "echo 'No linting configured for static HTML'"
+  },
+  "keywords": ["static", "html", "vercel-analytics"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
