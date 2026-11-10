@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>For JOJO — I'm Sorry 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+:root{--rose:#d94f83;--wine:#873654;--ink:#563746;--pale:#fff5f8;--pink:#f8d6e3;--gold:#d7a86e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 10% 10%,#fff 0 2px,transparent 3px),radial-gradient(circle at 85% 35%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#fff9fb,#fde8f0 55%,#f7eaff);background-size:36px 36px,48px 48px,auto;overflow-x:hidden}
+button{font:600 1rem 'DM Sans';border:0;cursor:pointer;transition:.25s}button:focus-visible{outline:3px solid #d94f83;outline-offset:3px}
+.wrap{width:min(92%,680px);margin:auto;padding:30px 0 55px}.topline{display:flex;justify-content:space-between;align-items:center;color:#b27a91;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}.music{border:1px solid #f1c6d7;background:#ffffffa8;color:#a84c72;padding:9px 13px;border-radius:30px;font-size:.78rem}
+.progress{height:4px;background:#f4d8e3;border-radius:10px;overflow:hidden;margin-bottom:25px}.progress span{display:block;height:100%;width:14%;background:linear-gradient(90deg,#ed91b2,#c94c7e);transition:width .5s}
+.card{background:#ffffffbd;border:1px solid #fff;box-shadow:0 18px 55px #9d4d6c18;border-radius:30px;padding:clamp(25px,6vw,48px);text-align:center;backdrop-filter:blur(10px);min-height:540px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.screen{display:none;animation:appear .65s ease}.screen.active{display:flex;flex-direction:column;align-items:center;width:100%}
+@keyframes appear{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.kicker{color:#c17a97;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--wine);font-weight:600}h1{font-size:clamp(2.5rem,9vw,4.5rem);line-height:1.04;margin:15px 0}h2{font-size:clamp(2rem,7vw,3rem);line-height:1.12;margin:10px 0 18px}h3{font-size:1.5rem;margin:10px 0}
+p{line-height:1.85;font-size:1rem;max-width:490px;margin:9px auto}.sub{color:#9b7183;font-size:.9rem}.emoji{font-size:4rem;margin:8px 0 15px;filter:drop-shadow(0 8px 12px #d45d8b20)}
+.btn{border-radius:50px;padding:14px 25px;background:linear-gradient(135deg,#ef83a9,#cc477b);color:white;box-shadow:0 10px 22px #d44d8138;margin-top:20px}.btn:hover{transform:translateY(-3px);box-shadow:0 14px 26px #d44d8145}.btn.light{background:#fff;color:#a64b72;border:1px solid #f1c6d7;box-shadow:none}.btn.small{padding:11px 18px;font-size:.9rem}
+.envelope{width:190px;height:130px;background:#eeb5ca;border-radius:9px;position:relative;margin:28px auto 15px;box-shadow:0 15px 30px #a84e7330;cursor:pointer}.envelope:before{content:"";position:absolute;inset:0;background:#f8dce6;clip-path:polygon(0 0,50% 58%,100% 0);z-index:3;transform-origin:top;transition:transform .7s}.envelope:after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 49%,#e9afc5 50%),linear-gradient(35deg,#f0bfd1 49%,transparent 50%);border-radius:9px}.letter{position:absolute;z-index:2;left:14px;right:14px;top:10px;height:100px;background:#fffafb;border-radius:5px;display:grid;place-items:center;color:#b94c78;font-family:'Playfair Display';font-style:italic;transition:transform .7s}.envelope.open:before{transform:rotateX(180deg)}.envelope.open .letter{transform:translateY(-62px)}
+.divider{width:55px;height:2px;background:#e9b5c9;margin:22px auto;border-radius:4px}
+.quote{font-family:'Playfair Display';font-style:italic;font-size:1.25rem;color:#a44970;line-height:1.55;max-width:450px}
+.note{background:#fff7fa;border:1px solid #f7dbe6;border-radius:20px;padding:18px 20px;margin:10px 0;width:100%;text-align:left}.note strong{color:#a64b72}.memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin:18px 0}.memory{background:#fff7fa;border:1px solid #f4d5e1;border-radius:18px;padding:17px 12px;min-height:110px;display:flex;flex-direction:column;justify-content:center}.memory span{font-size:1.6rem}.memory b{font-size:.88rem;color:#a44c70;margin-top:7px}
+.meter{height:12px;width:100%;background:#f4dbe5;border-radius:20px;overflow:hidden;margin:22px 0 8px}.meter span{display:block;width:0;height:100%;background:linear-gradient(90deg,#f4a3bf,#cb4278);border-radius:20px;transition:width 1.3s}
+.choices{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:20px;min-height:70px;width:100%}.yes{background:linear-gradient(135deg,#ee83a8,#c94378);color:white;padding:15px 30px;border-radius:40px;box-shadow:0 8px 20px #d44d8130}.no{background:#fff;color:#a64b72;border:1px solid #efc8d8;padding:14px 25px;border-radius:40px}
+.final{background:linear-gradient(145deg,#fffafd,#fff0f6);border:1px solid white;border-radius:25px;padding:25px 20px;width:100%}.signature{font-family:'Playfair Display';font-style:italic;color:#a34a70;font-size:1.35rem;margin-top:20px}
+footer{text-align:center;color:#b58a9e;font-size:.75rem;margin-top:20px}
+.heart{position:fixed;bottom:-35px;z-index:9;pointer-events:none;animation:float 5s linear forwards}@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.sparkle{position:absolute;color:#e7a2bc;opacity:.55;font-size:1.3rem}.s1{top:20px;left:25px}.s2{bottom:25px;right:25px}
+@media(max-width:450px){.card{min-height:590px;padding:25px 19px}.memory-grid{grid-template-columns:1fr 1fr}.topline{font-size:.68rem}}
+
+.cover-card{background:linear-gradient(145deg,#fff 0%,#fff7fb 45%,#ffe7f0 100%);border:2px solid #fff;box-shadow:0 22px 65px #b94d7926,inset 0 0 0 7px #fff9}
+.cover-card:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#fce0eb;top:-145px;right:-95px;opacity:.7}
+.cover-card:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:#f7e8ff;bottom:-135px;left:-90px;opacity:.8}
+.cover-content{position:relative;z-index:2}
+.panda-hero{font-size:5.2rem;line-height:1;margin:8px 0 12px;filter:drop-shadow(0 10px 10px #b84d7a26);animation:pandaBob 2.8s ease-in-out infinite}
+@keyframes pandaBob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+.panda-sticker{position:absolute;z-index:3;font-size:2.5rem;filter:drop-shadow(0 7px 8px #a44c7020);animation:stickerFloat 4s ease-in-out infinite}
+.panda-a{top:38px;left:24px}.panda-b{top:90px;right:22px;animation-delay:.7s}.panda-c{bottom:92px;left:25px;animation-delay:1.2s}.panda-d{bottom:38px;right:26px;animation-delay:1.8s}
+@keyframes stickerFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+.cover-pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #f4d2df;border-radius:30px;padding:8px 14px;color:#a34b70;font-size:.78rem;font-weight:700;box-shadow:0 5px 15px #b94d7912}
+.cover-title{background:linear-gradient(100deg,#84314f,#d64f87,#a44b88);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover-subtitle{font-family:'Playfair Display',serif;font-style:italic;color:#a65378;font-size:1.15rem}
+.sticker-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:13px 0}
+.sticker-row span{background:#fff;border:1px solid #f5d6e2;border-radius:18px;padding:7px 11px;font-size:1.25rem;box-shadow:0 5px 12px #a94d7310}
+.panda-divider{font-size:1.45rem;letter-spacing:7px;margin:6px 0}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="topline"><span>A little note from my heart</span><button class="music" onclick="toggleMusic()" id="musicBtn">♫ Gentle music: off</button></div>
+ <div class="progress"><span id="progress"></span></div>
+ <main class="card cover-card" id="mainCard">
+  <span class="sparkle s1">✦</span><span class="sparkle s2">♡</span>
+  <section class="screen active" id="p1">
+   <span class="panda-sticker panda-a">🐼</span><span class="panda-sticker panda-b">💗</span>
+   <span class="panda-sticker panda-c">🎀</span><span class="panda-sticker panda-d">🐾</span>
+   <div class="cover-content">
+   <div class="panda-hero">🐼💞</div>
+   <div class="cover-pill">🐾 A SPECIAL LITTLE SURPRISE FOR JOJO 🐾</div>
+   <div class="kicker" style="margin-top:17px">A message straight from my heart</div>
+   <h1 class="cover-title">Hey, JOJO<span style="color:#e58cac">.</span></h1>
+   <div class="cover-subtitle">My favourite panda deserves a proper letter 🐼</div>
+   <p>I don't know what you're feeling while opening this, and I won't pretend I do. I only hope you'll give me a few quiet minutes to say the things I couldn't say properly face to face.</p>
+   <div class="sticker-row"><span>🐼</span><span>💕</span><span>🧸</span><span>🌸</span><span>🐾</span></div>
+   <div class="envelope" id="env" onclick="openLetter()"><div class="letter">A letter for JOJO 💗</div></div>
+   <button class="btn" onclick="openLetter()">Open your little letter</button>
+   <div class="panda-divider">🐼 ♡ 🐼</div>
+   <p class="sub">Take your time. Read it whenever you're ready. 🤍</p>
+   </div>
+  </section>
+  <section class="screen" id="p2">
+   <div class="emoji">🐼🥺💗</div><div class="kicker">First, the most important thing</div>
+   <h2>I wish I could take that moment back, JOJO.</h2>
+   <p>I have replayed things in my head, wishing I had chosen better words, listened more carefully, or handled things differently. I cannot rewind that moment, and I know saying “sorry” doesn't erase how it made you feel.</p>
+   <p>If I hurt you, disappointed you, or made you feel like your feelings didn't matter, I am genuinely sorry. You deserved patience, respect, and care from me — especially in a moment when I failed to give you that.</p>
+   <div class="divider"></div><div class="quote">“I can't change what I did, but I can take responsibility for it and choose to do better.”</div>
+   <button class="btn" onclick="go(3)">There's more I want to say</button>
+  </section>
+  <section class="screen" id="p3">
+   <div class="emoji">🐼🫶</div><div class="kicker">Please know this</div><h2>You matter to me.</h2>
+   <p>I may not always have the right words, but that doesn't make your place in my life any less important. I never want you to feel easy to lose, easy to ignore, or someone whose feelings can be brushed aside.</p>
+   <div class="note"><strong>I'm sorry</strong> for the moment I made you upset.</div>
+   <div class="note"><strong>I'm sorry</strong> if I didn't understand how you were feeling.</div>
+   <div class="note"><strong>I'm sorry</strong> if my ego, carelessness, or silence spoke louder than my friendship.</div>
+   <p>I won't promise to become perfect overnight. I can promise something more real: I'll listen without getting defensive, respect what you feel, own my mistakes, and work to make sure this doesn't happen again.</p>
+   <div class="note" style="margin-top:18px"><strong>What I wish I had said then:</strong><br><br>“JOJO, I hear you. I understand that I hurt you, and I'm not going to dismiss it or make excuses. You matter to me, and I'm sorry I didn't show that properly when it mattered.”</div><p class="quote">I am not asking you to forget. I'm asking you to believe that I want to learn from this.</p><button class="btn" onclick="go(4)">One thing I never want you to forget</button>
+  </section>
+  <section class="screen" id="p4">
+   <div class="emoji">🐼🌷</div><div class="kicker">A few little reminders</div><h2>Our friendship is precious.</h2>
+   <p>Friendship doesn't mean two people will never hurt or misunderstand each other. It means both people deserve honesty, respect, and the chance to be heard. I miss the ease of being okay with you, but I know trust is rebuilt through actions, not pretty paragraphs.</p>
+   <div class="memory-grid">
+    <div class="memory"><span>😂</span><b>The random laughs</b></div>
+    <div class="memory"><span>🤍</span><b>The comfort of being us</b></div>
+    <div class="memory"><span>🌈</span><b>The little memories</b></div>
+    <div class="memory"><span>🫂</span><b>Having each other's back</b></div>
+   </div>
+   <p>Those little things matter because they are part of a friendship I truly value. And JOJO, you matter — not because I need you to forgive me, but because you are you.</p>
+   <button class="btn" onclick="go(5)">I have one more confession</button>
+  </section>
+  <section class="screen" id="p5">
+   <div class="emoji">📏💗</div><div class="kicker">An extremely scientific test</div><h2>How sorry am I?</h2>
+   <p>No number can measure an apology, and I know a cute little meter can't repair anything. Still, let me show you how much I wish I had handled things differently.</p>
+   <div class="meter"><span id="meterFill"></span></div><div class="quote" id="meterText">Measuring from the bottom of my heart...</div>
+   <button class="btn" onclick="measure()" id="measureBtn">Measure my sorry level</button>
+  </section>
+  <section class="screen" id="p6">
+   <div class="emoji">🐼🧸</div><div class="kicker">No pressure, just honesty</div><h2>Can we talk when you're ready?</h2>
+   <p>If you ever feel ready to talk, I want to hear your side properly. I won't interrupt, turn it into an argument, or make you comfort me. I want to understand what hurt you, even if hearing it is difficult.</p>
+   <p>You do not owe me an immediate reply, a smile, or forgiveness. Take the time you need. I will respect your space, because an apology should never become another burden for the person who was hurt.</p>
+   <div class="divider"></div><div class="quote">“I miss the comfort of our friendship. I hope we can find our way back, one honest conversation and one better choice at a time.”</div>
+   <button class="btn" onclick="go(7)">One last question, JOJO...</button>
+  </section>
+  <section class="screen" id="p7">
+   <div class="emoji">🥹</div><div class="kicker">From me, to you</div><h2>Will you forgive me, JOJO?</h2>
+   <p>You don't have to choose the answer that makes me happy. Choose what is true for you. If you need time, I will understand.</p>
+   <div class="choices"><button class="yes" onclick="forgive()">I forgive you 💗</button><button class="no" id="noBtn" onclick="noThanks()">I need time 🤍</button></div>
+   <p class="sub" id="choiceHint">Either answer is okay. I just wanted you to know I'm sorry.</p>
+  </section>
+  <section class="screen" id="p8">
+   <div class="final"><div class="emoji">🐼💖🫂</div><div class="kicker">A little hope for a new page</div><h1>Thank you, JOJO.</h1>
+    <p>If you choose to forgive me, I will never treat that kindness casually. I'll be grateful for the chance to rebuild your trust slowly, through the way I speak, listen, and show up.</p>
+    <p>And if you're not ready, that's okay too. I won't use this page, our memories, or my feelings to pressure you. Your hurt deserves room, and your choice deserves respect.</p>
+    <div class="divider"></div><div class="quote">You deserved better from me in that moment. I'm sorry, JOJO. I mean that — without excuses, and without expecting anything in return.</div>
+    <div class="signature">With a genuine sorry,<br>Prathmesh 💗<br><span style="font:500 .82rem DM Sans;color:#a77b8e">No pressure to reply. Read this in your own time.</span></div>
+   </div>
+   <button class="btn light" onclick="replay()">Read it again ↻</button>
+  </section>
+ </main>
+ <footer>Made with honesty, care, and a little courage. ♡</footer>
+</div>
+<script>
+let current=1, opened=false, musicOn=false, audioCtx=null, melodyTimer=null;
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('p'+n).classList.add('active');current=n;document.getElementById('progress').style.width=(n/8*100)+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function openLetter(){if(opened)return;opened=true;document.getElementById('env').classList.add('open');setTimeout(()=>go(2),900);}
+function measure(){document.getElementById('meterFill').style.width='100%';document.getElementById('meterText').textContent='The meter is full. But the real proof will not be on this screen — it will be in how I treat you from now on. 💗';document.getElementById('measureBtn').textContent='Okay, I really mean it';setTimeout(()=>go(6),2200);}
+function noThanks(){document.getElementById('choiceHint').textContent='Thank you for being honest. Take all the time you need. I will respect that. 🤍';document.getElementById('noBtn').textContent='I need time 🤍';}
+function forgive(){go(8);for(let i=0;i<38;i++)setTimeout(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['💗','💕','💖','🌸','✨'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*18)+'px';h.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),6500)},i*75);}
+function replay(){opened=false;document.getElementById('env').classList.remove('open');document.getElementById('meterFill').style.width='0';document.getElementById('meterText').textContent='Measuring from the bottom of my heart...';document.getElementById('measureBtn').textContent='Measure my sorry level';document.getElementById("choiceHint").textContent="Either answer is okay. I just wanted you to know I am sorry.";go(1);}
+function toggleMusic(){if(!musicOn){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();let notes=[523.25,659.25,783.99,659.25];let i=0;melodyTimer=setInterval(()=>{if(!audioCtx)return;let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=notes[i++%notes.length];g.gain.setValueAtTime(.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.025,audioCtx.currentTime+.04);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.42);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.45)},500);musicOn=true;document.getElementById('musicBtn').textContent='♫ Gentle music: on';}catch(e){document.getElementById('musicBtn').textContent='Music unavailable';}}else{clearInterval(melodyTimer);if(audioCtx){audioCtx.close();audioCtx=null;}musicOn=false;document.getElementById('musicBtn').textContent='♫ Gentle music: off';}}
+</script>
+</body></html>
