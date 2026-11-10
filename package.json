@@ -1,0 +1,17 @@
+{
+  "name": "jojosorry",
+  "version": "1.0.0",
+  "description": "A heartfelt apology page for JOJO",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static HTML - no build required'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": ["static", "html", "personal"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
